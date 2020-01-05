@@ -17,10 +17,11 @@ RUN git clone https://github.com/google/protobuf.git pb && \
 # gRPC.  After gRPC's beta release, the Dockerfile versions will be updated to
 # build a specific version.
 
+ENV GOPATH /go
+
 # gRPC libraries
 RUN go get google.golang.org/grpc
 RUN go get -u github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway
 RUN go get -u github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger
 RUN go get -u github.com/golang/protobuf/protoc-gen-go
 
-ENV GOPATH /go
